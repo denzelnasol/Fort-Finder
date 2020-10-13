@@ -7,14 +7,14 @@
     tools:context=".model.GameBoard">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/numberOfMinesFound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="Found 0 of 8 mines" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/scansUsed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -26,8 +26,8 @@
         android:id="@+id/tableForGameBoard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView1"
-        android:layout_alignLeft="@id/textView1"
+        android:layout_below="@+id/numberOfMinesFound"
+        android:layout_alignLeft="@id/numberOfMinesFound"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="0dp"
