@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".model.Help">
+
+    <TextView
+        android:id="@+id/classLinkView3"
+        android:layout_width="387dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="28dp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:text="@string/linkToSampleImages"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/classLinkView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/helpView"
+        app:layout_constraintTop_toBottomOf="@+id/classLinkView" />
+
+    <TextView
+        android:id="@+id/classLinkView2"
+        android:layout_width="389dp"
+        android:layout_height="28dp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:text="@string/linkToPexels"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/classLinkView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/helpView"
+        app:layout_constraintTop_toBottomOf="@+id/classLinkView" />
+
+    <TextView
+        android:id="@+id/aboutAuthorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Made By: Denzel Nasol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/helpView"
+        app:layout_constraintTop_toBottomOf="@+id/tipsView" />
+
+    <TextView
+        android:id="@+id/gameInfoView"
+        android:layout_width="378dp"
+        android:layout_height="71dp"
+        android:text="We, the English army have just defeated the significantly superior French army at Agincourt! The king now sends you to lead a small group of scouts in order to find the surrounding enemy forts in the area."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/helpView"
+        app:layout_constraintTop_toBottomOf="@+id/helpView" />
+
+    <TextView
+        android:id="@+id/helpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Help"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/classLinkView"
+        android:layout_width="391dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="4dp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:text="@string/linkToSite"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/helpView"
+        app:layout_constraintTop_toBottomOf="@+id/aboutAuthorView" />
+
+    <TextView
+        android:id="@+id/tipsView"
+        android:layout_width="381dp"
+        android:layout_height="106dp"
+        android:text="Tips:\n-Click areas to reveal potential forts\n-An area without a fort reveals the number of hidden forts in its row and column\n-Pressing a revealed fort will give you information on other surrounding forts"
+        app:layout_constraintStart_toStartOf="@+id/helpView"
+        app:layout_constraintTop_toBottomOf="@+id/gameInfoView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

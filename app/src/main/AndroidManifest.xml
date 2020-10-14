@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="sfu.packages.cmpt276a3.model.Menu"
-            android:screenOrientation="landscape"
-            >
+        <activity android:name=".model.Help"
+            android:screenOrientation="landscape">
+        </activity>
+
+        <activity
+            android:name=".model.Menu"
+            android:screenOrientation="landscape">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".model.GameBoard"
-            android:screenOrientation="landscape"
-            >
-
-        </activity>
+        <activity
+            android:name=".model.GameBoard"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

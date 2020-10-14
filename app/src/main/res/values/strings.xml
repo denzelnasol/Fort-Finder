@@ -2,4 +2,7 @@
     <string name="app_name">CMPT276A3</string>
     <string name="leave">Return</string>
     <string name="cancel">Cancel</string>
+    <string name="linkToSite">Home Page: https://opencoursehub.cs.sfu.ca/jackt/grav-cms/cmpt276-2/home</string>
+    <string name="linkToPexels">Pexels URL: https://www.pexels.com/photo/architectural-photography-of-brown-and-gray-castle-3061171/</string>
+    <string name="linkToSampleImages">Samples URL: https://canvas.sfu.ca/courses/56838/pages/sample-images</string>
 </resources>
