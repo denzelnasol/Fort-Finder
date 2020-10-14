@@ -23,8 +23,8 @@ import sfu.packages.cmpt276a3.R;
 public class GameBoard extends AppCompatActivity {
 
     private static final int NUM_ROWS = 4;
-    private static final int NUM_COLS = 7;
-    private static final int NUM_MINES = 8;
+    private static final int NUM_COLS = 5;
+    private static final int NUM_MINES = 6;
 
     private static int minesFound = 0;
     private static int scansUsed = 0;

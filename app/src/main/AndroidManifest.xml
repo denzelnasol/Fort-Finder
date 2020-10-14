@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".model.GameBoard"
-            android:screenOrientation="landscape"
             android:configChanges="keyboard|orientation|keyboardHidden|screenSize"
             >
             <intent-filter>
