@@ -38,16 +38,24 @@ public class Menu extends AppCompatActivity {
     }
 
     private void options() {
-        Button startButton = (Button) findViewById(R.id.optionsButton);
-        startButton.setOnClickListener(new View.OnClickListener() {
+        Button optionsButton = (Button) findViewById(R.id.optionsButton);
+        optionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = Help.makeIntent(Menu.this);
+                Intent intent = Options.makeIntent(Menu.this);
                 startActivity(intent);
             }
         });
     }
 
     private void help() {
+        Button helpButton = (Button) findViewById(R.id.helpButton);
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = Help.makeIntent(Menu.this);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".model.Help"
-            android:screenOrientation="landscape">
-        </activity>
+        <activity android:name=".model.Options">
 
+        </activity>
         <activity
-            android:name=".model.Menu"
-            android:screenOrientation="landscape">
+            android:name=".model.Help"
+            ></activity>
+        <activity
+            android:name=".model.Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".model.GameBoard"
-            android:screenOrientation="landscape" />
+            android:name=".model.GameBoard" />
     </application>
 
 </manifest>
