@@ -1,6 +1,8 @@
 package sfu.packages.cmpt276a3.model;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import android.app.Fragment;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -22,6 +25,9 @@ public class GameBoard extends AppCompatActivity {
     private static final int NUM_ROWS = 4;
     private static final int NUM_COLS = 7;
     private static final int NUM_MINES = 8;
+
+    private static int minesFound = 0;
+    private static int scansUsed = 0;
 
     Button buttons[][] = new Button[NUM_ROWS][NUM_COLS];
 
@@ -112,9 +118,23 @@ public class GameBoard extends AppCompatActivity {
             Bitmap scaledBitmap = Bitmap.createScaledBitmap(originalBitmap, newWidth, newHeight, true);
             Resources resource = getResources();
             button.setBackground(new BitmapDrawable(resource, scaledBitmap));
+
+            minesFound++;
+            TextView text = (TextView) findViewById(R.id.numberOfMinesFound);
+            text.setText("Found " + minesFound + " of " + NUM_MINES + " mines");
+
+            if (minesFound == NUM_MINES) {
+                FragmentManager manager = getSupportFragmentManager();
+                WinFragment dialog = new WinFragment();
+                dialog.show(manager, "WinMessageDialog");
+            }
+
         }
         else if (mines[row][col] == 4) {
             mines[row][col] = 3;
+            scansUsed++;
+            TextView text = (TextView) findViewById(R.id.scansUsed);
+            text.setText("# Scans used: " + scansUsed);
         }
         else {
             mines[row][col] = 3;
@@ -144,9 +164,11 @@ public class GameBoard extends AppCompatActivity {
                 }
             }
         }
+        scansUsed++;
+        TextView text = (TextView) findViewById(R.id.scansUsed);
+        text.setText("# Scans used: " + scansUsed);
         nearbyHiddenMines[mineRow][mineCol] = mineCount;
         button.setText("" + nearbyHiddenMines[mineRow][mineCol]);
-        mineCount = 0;
     }
 
     private void updateNearbyHiddenMines() {

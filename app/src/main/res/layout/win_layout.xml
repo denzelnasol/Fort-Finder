@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/castle"
+        android:weightSum="1" />
+
+    <TextView
+        android:id="@+id/winView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="149dp"
+        android:text="You Win!"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/askView"
+        android:layout_width="237dp"
+        android:layout_height="31dp"
+        android:layout_below="@+id/winView"
+        android:layout_alignStart="@+id/winView"
+        android:layout_alignEnd="@+id/winView"
+        android:layout_marginStart="-54dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-63dp"
+        android:text="Do you want to leave?"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:weightSum="1" />
+
+</RelativeLayout>
