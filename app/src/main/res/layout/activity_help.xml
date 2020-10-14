@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3b5998"
     tools:context=".model.Help">
 
     <TextView
@@ -14,6 +15,7 @@
         android:autoLink="all"
         android:linksClickable="true"
         android:text="@string/linkToSampleImages"
+        android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/classLinkView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,6 +29,7 @@
         android:autoLink="all"
         android:linksClickable="true"
         android:text="@string/linkToPexels"
+        android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/classLinkView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Made By: Denzel Nasol"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/helpView"
@@ -48,6 +52,7 @@
         android:layout_width="378dp"
         android:layout_height="71dp"
         android:text="We, the English army have just defeated the significantly superior French army at Agincourt! The king now sends you to lead a small group of scouts in order to find the surrounding enemy forts in the area."
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/helpView"
@@ -59,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Help"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,6 +80,7 @@
         android:autoLink="all"
         android:linksClickable="true"
         android:text="@string/linkToSite"
+        android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,6 +92,7 @@
         android:layout_width="381dp"
         android:layout_height="106dp"
         android:text="Tips:\n-Click areas to reveal potential forts\n-An area without a fort reveals the number of hidden forts in its row and column\n-Pressing a revealed fort will give you information on other surrounding forts"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/helpView"
         app:layout_constraintTop_toBottomOf="@+id/gameInfoView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

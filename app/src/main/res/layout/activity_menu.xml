@@ -4,68 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#618FDD"
+    android:background="#3b5998"
     tools:context=".model.Menu">
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="109dp"
-        android:layout_height="61dp"
-        android:text="Start"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/titleView"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-    <Button
-        android:id="@+id/optionsButton"
-        android:layout_width="109dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="108dp"
-        android:text="Options"
-        app:layout_constraintEnd_toEndOf="@+id/startButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/startButton"
-        app:layout_constraintTop_toBottomOf="@+id/startButton" />
-
-    <Button
-        android:id="@+id/helpButton"
-        android:layout_width="109dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="4dp"
-        android:text="Help"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/optionsButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/optionsButton"
-        app:layout_constraintTop_toBottomOf="@+id/optionsButton"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/titleView"
-        android:layout_width="401dp"
-        android:layout_height="42dp"
+        android:layout_width="670dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:text="Fort Hunt"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintVertical_bias="0.562" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="291dp"
-        android:layout_height="196dp"
+        android:layout_width="361dp"
+        android:layout_height="245dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/titleView"
-        app:layout_constraintHorizontal_bias="0.974"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497"
+        app:layout_constraintVertical_bias="0.755"
         app:srcCompat="@drawable/castle" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="286dp"
+        android:layout_height="151dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/titleView"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.517">
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start" />
+
+        <Button
+            android:id="@+id/optionsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Options" />
+
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
