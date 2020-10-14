@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">CMPT276A3</string>
-    <string name = "leave">Return</string>
-    <string name = "cancel">Cancel</string>
+    <string name="leave">Return</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -1,9 +1,7 @@
 package sfu.packages.cmpt276a3.model;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import android.app.Fragment;
-
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,7 +12,9 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.Random;
 
@@ -220,5 +220,9 @@ public class GameBoard extends AppCompatActivity {
                 button.setMaxHeight(height);
             }
         }
+    }
+
+    public static Intent makeIntent(Context context) {
+        return new Intent(context, GameBoard.class);
     }
 }
