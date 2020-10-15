@@ -74,9 +74,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="316dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="118dp"
         android:background="#193E88"
         android:backgroundTint="#AB314AA3"
         android:textColor="#FFFFFF" />

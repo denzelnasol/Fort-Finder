@@ -22,13 +22,13 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.575" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="286dp"
-        android:layout_height="151dp"
-        android:layout_marginBottom="128dp"
+        android:layout_width="498dp"
+        android:layout_height="214dp"
+        android:layout_marginBottom="60dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,19 +38,19 @@
         <Button
             android:id="@+id/startButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:text="Start" />
 
         <Button
             android:id="@+id/optionsButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:text="Options" />
 
         <Button
             android:id="@+id/helpButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:text="Help" />
 
     </LinearLayout>
