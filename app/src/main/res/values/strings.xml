@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CMPT276A3</string>
+    <string name="app_name">Fort Hunt</string>
     <string name="leave">Return</string>
     <string name="cancel">Cancel</string>
     <string name="linkToSite">Home Page: https://opencoursehub.cs.sfu.ca/jackt/grav-cms/cmpt276-2/home</string>

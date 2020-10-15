@@ -8,7 +8,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -36,6 +39,7 @@ public class GameBoard extends AppCompatActivity {
     private static int minesFound = 0;
     private static int scansUsed = 0;
 
+    // Array of buttons on board
     Button buttons[][] = new Button[NUM_ROWS][NUM_COLS];
 
     // Array for location of mines,
@@ -146,6 +150,13 @@ public class GameBoard extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         slash.start();
+                        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+                        if (mines[FINAL_ROW][FINAL_COL] == 1) {
+                            vibrator.vibrate(250);
+                        }
+                        else {
+                            vibrator.vibrate(100);
+                        }
                         boardButtonClicked(FINAL_ROW, FINAL_COL);
                     }
                 });
