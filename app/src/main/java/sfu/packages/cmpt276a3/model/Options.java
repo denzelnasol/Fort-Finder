@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +57,7 @@ public class Options extends AppCompatActivity {
 
             RadioButton button = new RadioButton(this);
             button.setText(stringBoardSize);
+            button.setTextColor(Color.parseColor("#FFFFFF"));
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -96,6 +98,7 @@ public class Options extends AppCompatActivity {
 
             RadioButton button = new RadioButton(this);
             button.setText(getString(R.string.mines, numMine));
+            button.setTextColor(Color.parseColor("#FFFFFF"));
 
             button.setOnClickListener(new View.OnClickListener() {
                 @Override

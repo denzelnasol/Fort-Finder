@@ -3,17 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/fight"
     android:layout_height="match_parent"
     tools:context=".model.Options">
 
     <RadioGroup
         android:id="@+id/radio_group_number_of_mines"
-        android:layout_width="157dp"
-        android:layout_height="274dp"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/mineNumberView"
         android:layout_alignStart="@+id/mineNumberView"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#193E88"
+        android:backgroundTint="#AB314AA3"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/settingsView"
@@ -23,7 +27,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="34dp"
         android:layout_marginTop="23dp"
+        android:background="#36000000"
         android:text="Settings"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -35,7 +41,10 @@
         android:layout_alignStart="@+id/settingsView"
         android:layout_marginStart="2dp"
         android:layout_marginTop="16dp"
-        android:text="Number of Mines:" />
+        android:background="#36000000"
+        android:text="Number of Mines:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/boardSizeView"
@@ -45,11 +54,14 @@
         android:layout_marginStart="103dp"
         android:layout_marginTop="80dp"
         android:layout_toEndOf="@+id/mineNumberView"
-        android:text="Board Size:" />
+        android:background="#36000000"
+        android:text="Board Size:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/radio_group_board_size"
-        android:layout_width="204dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/boardSizeView"
         android:layout_alignStart="@+id/boardSizeView"
@@ -57,8 +69,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="276dp"
-        android:layout_marginBottom="27dp" />
+        android:layout_marginEnd="316dp"
+        android:layout_marginBottom="120dp"
+        android:background="#193E88"
+        android:backgroundTint="#AB314AA3"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/eraseTimesPlayedButton"

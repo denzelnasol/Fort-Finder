@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -122,6 +123,7 @@ public class GameBoard extends AppCompatActivity {
 
     private void populateBoard() {
         TableLayout table = (TableLayout) findViewById(R.id.tableForGameBoard);
+        final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
         for (int row = 0; row < NUM_ROWS; row++) {
             TableRow tableRow = new TableRow(this);
             tableRow.setLayoutParams(new TableLayout.LayoutParams(
@@ -143,6 +145,7 @@ public class GameBoard extends AppCompatActivity {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        slash.start();
                         boardButtonClicked(FINAL_ROW, FINAL_COL);
                     }
                 });
