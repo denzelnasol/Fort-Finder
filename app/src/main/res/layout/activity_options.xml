@@ -42,21 +42,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="80dp"
         android:layout_toEndOf="@+id/mineNumberView"
         android:text="Board Size:" />
 
     <RadioGroup
         android:id="@+id/radio_group_board_size"
-        android:layout_width="171dp"
-        android:layout_height="277dp"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/boardSizeView"
         android:layout_alignStart="@+id/boardSizeView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="184dp"
+        android:layout_marginEnd="276dp"
         android:layout_marginBottom="27dp" />
+
+    <Button
+        android:id="@+id/eraseTimesPlayedButton"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radio_group_board_size"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="313dp"
+        android:layout_marginBottom="31dp"
+        android:layout_toEndOf="@+id/settingsView"
+        android:text="Erase Times Played" />
 </RelativeLayout>

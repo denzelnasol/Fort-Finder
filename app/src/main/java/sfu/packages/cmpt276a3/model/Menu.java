@@ -58,4 +58,12 @@ public class Menu extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        finishAffinity();
+        finish();
+    }
 }
