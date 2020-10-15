@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/classLinkView3"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="18dp"
         android:layout_marginTop="28dp"
         android:autoLink="all"
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/classLinkView2"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="28dp"
         android:autoLink="all"
         android:background="#193E88"
@@ -46,7 +46,7 @@
 
     <TextView
         android:id="@+id/aboutAuthorView"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="22dp"
         android:background="#193E88"
         android:backgroundTint="#AB314AA3"
@@ -61,7 +61,7 @@
 
     <TextView
         android:id="@+id/gameInfoView"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="64dp"
         android:background="#193E88"
         android:backgroundTint="#AB314AA3"
@@ -76,7 +76,7 @@
 
     <TextView
         android:id="@+id/helpView"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="43dp"
         android:layout_marginTop="4dp"
         android:background="#193E88"
@@ -94,7 +94,7 @@
 
     <TextView
         android:id="@+id/classLinkView"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="23dp"
         android:autoLink="all"
         android:background="#193E88"
@@ -112,7 +112,7 @@
 
     <TextView
         android:id="@+id/tipsView"
-        android:layout_width="694dp"
+        android:layout_width="670dp"
         android:layout_height="89dp"
         android:background="#193E88"
         android:backgroundTint="#AB314AA3"

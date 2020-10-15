@@ -83,15 +83,15 @@
 
     <Button
         android:id="@+id/eraseTimesPlayedButton"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
         android:layout_above="@+id/radio_group_board_size"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="79dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="313dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="23dp"
         android:layout_toEndOf="@+id/settingsView"
         android:text="Erase Times Played" />
 </RelativeLayout>
