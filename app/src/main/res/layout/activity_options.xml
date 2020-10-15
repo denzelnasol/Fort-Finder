@@ -28,6 +28,8 @@
         android:layout_marginStart="34dp"
         android:layout_marginTop="23dp"
         android:background="#36000000"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
         android:text="Settings"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -42,6 +44,8 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="16dp"
         android:background="#36000000"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
         android:text="Number of Mines:"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
@@ -55,6 +59,8 @@
         android:layout_marginTop="80dp"
         android:layout_toEndOf="@+id/mineNumberView"
         android:background="#36000000"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
         android:text="Board Size:"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />

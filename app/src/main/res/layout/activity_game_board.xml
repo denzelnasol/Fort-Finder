@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fight"
     tools:context=".model.GameBoard">
 
     <TextView
@@ -11,7 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Found 0 of 8 mines" />
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:background="#B4254E9E"
+        android:text="Found 0 of 8 Forts"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/scansUsed"
@@ -20,7 +25,11 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="0dp"
-        android:text="# Scans used: 0" />
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:background="#B4254E9E"
+        android:text="# Scans used: 0"
+        android:textColor="#FFFFFF" />
 
     <TableLayout
         android:id="@+id/tableForGameBoard"
@@ -44,14 +53,19 @@
 
     <TextView
         android:id="@+id/gamesPlayedView"
-        android:layout_width="174dp"
-        android:layout_height="20dp"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="548dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginEnd="14dp"
         android:layout_marginBottom="6dp"
-        android:text="Games Played: " />
+        android:background="#B4254E9E"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:text="Games Played: "
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

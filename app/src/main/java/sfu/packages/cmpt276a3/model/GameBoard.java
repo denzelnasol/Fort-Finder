@@ -201,7 +201,7 @@ public class GameBoard extends AppCompatActivity {
 
             minesFound++;
             TextView text = (TextView) findViewById(R.id.numberOfMinesFound);
-            text.setText("Found " + minesFound + " of " + NUM_MINES + " mines");
+            text.setText("Found " + minesFound + " of " + NUM_MINES + " Forts");
 
             checkPlayerWon();
 
