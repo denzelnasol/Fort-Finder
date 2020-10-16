@@ -11,7 +11,9 @@ import android.widget.Button;
 
 import sfu.packages.cmpt276a3.R;
 
-// Displays menu including button to go to other activities
+/**
+    *Displays menu including button to go to other activities
+ */
 public class Menu extends AppCompatActivity {
 
     @Override

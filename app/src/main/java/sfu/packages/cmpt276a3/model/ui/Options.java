@@ -15,7 +15,9 @@ import android.widget.RadioGroup;
 
 import sfu.packages.cmpt276a3.R;
 
-// Displays options activity and allows user to change settings for the game
+/**
+ * Displays options activity and allows user to change settings for the game
+ */
 public class Options extends AppCompatActivity {
     private static final String NUM_MINES = "Number of Mines";
     private static final String BOARD_SIZE = "Board Size";
@@ -81,7 +83,7 @@ public class Options extends AppCompatActivity {
         editor.apply();
     }
 
-    static public String getBoardSize(Context context) {
+    public static String getBoardSize(Context context) {
         SharedPreferences prefs = context.getSharedPreferences("BoardPrefs", MODE_PRIVATE);
 
         return prefs.getString(BOARD_SIZE, context.getString(R.string.fourBySix));
@@ -120,7 +122,7 @@ public class Options extends AppCompatActivity {
         editor.apply();
     }
 
-    static public int getNumMines(Context context) {
+    public static int getNumMines(Context context) {
         SharedPreferences prefs = context.getSharedPreferences("MinePrefs", MODE_PRIVATE);
         int defaultNumMines = context.getResources().getInteger(R.integer.default_num_mines);
 

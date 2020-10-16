@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import sfu.packages.cmpt276a3.R;
 
-// Welcome screen shows on app startup
+/**
+ *Welcome screen shows on app startup
+ */
 public class WelcomeScreen extends AppCompatActivity {
 
     // Animation code found at: https://www.youtube.com/watch?v=QD9nhyWX-gs
