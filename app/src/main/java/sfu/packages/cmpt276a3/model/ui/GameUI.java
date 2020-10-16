@@ -354,6 +354,8 @@ public class GameUI extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        NUM_GAMES_PLAYED++;
+        setGamesPlayed();
     }
 
     public static Intent makeIntent(Context context) {
