@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
-        android:text="By Denzel Nasol"
+        android:text="@string/by_denzel_nasol"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/skipAnimButton"
@@ -23,7 +23,7 @@
         android:id="@+id/titleWelcomeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fort Hunt"
+        android:text="@string/fort_hunt"
         android:textColor="#000000"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -41,7 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleWelcomeView"
-        app:srcCompat="@drawable/medieval_castle" />
+        app:srcCompat="@drawable/medieval_castle"
+        android:contentDescription="@string/welcome_animation" />
 
     <Button
         android:id="@+id/skipAnimButton"
@@ -50,7 +51,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/wood_button"
-        android:text="Skip"
+        android:text="@string/skip"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
