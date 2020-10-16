@@ -36,29 +36,26 @@ public class Options extends AppCompatActivity {
 
     private void setUpEraseButton(Context context) {
         final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
-        Button button = (Button) findViewById(R.id.eraseTimesPlayedButton);
+        Button button = findViewById(R.id.eraseTimesPlayedButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 slash.start();
-                Boolean eraseCheck = true;
+                boolean eraseCheck = true;
                 SharedPreferences prefs = Options.this.getSharedPreferences("ErasePrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("Erase Check", eraseCheck);
                 editor.apply();
-                eraseCheck = false;
             }
         });
     }
 
     private void createBoardSizeRadioButton() {
-        RadioGroup group = (RadioGroup) findViewById(R.id.radio_group_board_size);
+        RadioGroup group = findViewById(R.id.radio_group_board_size);
         String[] boardSizes = getResources().getStringArray(R.array.game_board_sizes);
 
         // Create the buttons
-        for (int i = 0; i < boardSizes.length; i++) {
-            final String stringBoardSize = boardSizes[i];
-
+        for (final String stringBoardSize : boardSizes) {
             RadioButton button = new RadioButton(this);
             button.setText(stringBoardSize);
             button.setTextColor(Color.parseColor("#FFFFFF"));
@@ -93,13 +90,11 @@ public class Options extends AppCompatActivity {
     }
 
     private void createMineRadioButtons() {
-        RadioGroup group = (RadioGroup) findViewById(R.id.radio_group_number_of_mines);
+        RadioGroup group = findViewById(R.id.radio_group_number_of_mines);
         int[] numMines = getResources().getIntArray(R.array.number_of_mines);
 
         // Create the buttons
-        for (int i = 0; i < numMines.length; i++) {
-            final int numMine = numMines[i];
-
+        for (final int numMine : numMines) {
             RadioButton button = new RadioButton(this);
             button.setText(getString(R.string.mines, numMine));
             button.setTextColor(Color.parseColor("#FFFFFF"));

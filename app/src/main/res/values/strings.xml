@@ -1,10 +1,15 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Fort Hunt</string>
     <string name="leave">Return</string>
     <string name="cancel">Cancel</string>
-    <string name="linkToSite">Home Page: https://opencoursehub.cs.sfu.ca/jackt/grav-cms/cmpt276-2/home</string>
+    <string name="linkToSite" tools:ignore="TypographyDashes">Home Page: https://opencoursehub.cs.sfu.ca/jackt/grav-cms/cmpt276-2/home</string>
     <string name="linkToPexels">Pexels URL: https://www.pexels.com/photo/architectural-photography-of-brown-and-gray-castle-3061171/</string>
     <string name="linkToSampleImages">Samples URL: https://canvas.sfu.ca/courses/56838/pages/sample-images</string>
     <string name="mines">%1$d Mines</string>
     <string name="fourBySix">4 x 6</string>
+    <string name="games_played">Games Played: %1$d</string>
+    <string name="number_mines_found">Found %1$d of %2$d Forts</string>
+    <string name="number_scans_used"># Scans used: %1$d</string>
+    <string name="empty">%1$d</string>
+    <string name="found_zero_of_mine_nums">Found 0 of %1$d Mines</string>
 </resources>

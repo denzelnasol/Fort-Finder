@@ -37,7 +37,7 @@ public class GameUI extends AppCompatActivity {
     private static int scansUsed = 0;
 
     // Array of buttons on board
-    Button buttons[][] = new Button[NUM_ROWS][NUM_COLS];
+    Button[][] buttons = new Button[NUM_ROWS][NUM_COLS];
 
     // Array for location of mines,
     // if spot contains hidden mine, value is 1,
@@ -46,10 +46,10 @@ public class GameUI extends AppCompatActivity {
     // if revealed mine is pressed again, value is 4
     // if spot already clicked twice, value is 5
     // else value is 0
-    int mines[][] = new int[NUM_ROWS][NUM_COLS];
+    int[][] mines = new int[NUM_ROWS][NUM_COLS];
 
     // Array containing number of surround mines for each button
-    int nearbyHiddenMines[][] = new int[NUM_ROWS][NUM_COLS];
+    int[][] nearbyHiddenMines = new int[NUM_ROWS][NUM_COLS];
 
     OptionsData optionsData = OptionsData.getInstance();
 
@@ -68,18 +68,18 @@ public class GameUI extends AppCompatActivity {
 
     void updateGamesPlayed() {
         SharedPreferences sharedPreferences = getSharedPreferences("ErasePrefs", MODE_PRIVATE);
-        Boolean eraseCheck = sharedPreferences.getBoolean("Erase Check", false);
+        boolean eraseCheck = sharedPreferences.getBoolean("Erase Check", false);
 
-        if (eraseCheck == true) {
+        if (eraseCheck) {
             NUM_GAMES_PLAYED = 0;
-            sharedPreferences.edit().clear().commit();
+            sharedPreferences.edit().clear().apply();
             setGamesPlayed();
         }
         else {
             NUM_GAMES_PLAYED = getGamesPlayed(this);
         }
-        TextView text = (TextView) findViewById(R.id.gamesPlayedView);
-        text.setText("Games Played: " + NUM_GAMES_PLAYED);
+        TextView text = findViewById(R.id.gamesPlayedView);
+        text.setText(getString(R.string.games_played, NUM_GAMES_PLAYED));
     }
 
     static public int getGamesPlayed(Context context) {
@@ -162,8 +162,8 @@ public class GameUI extends AppCompatActivity {
             button.setBackground(new BitmapDrawable(resource, scaledBitmap));
 
             minesFound++;
-            TextView text = (TextView) findViewById(R.id.numberOfMinesFound);
-            text.setText("Found " + minesFound + " of " + NUM_MINES + " Forts");
+            TextView text = findViewById(R.id.numberOfMinesFound);
+            text.setText(getString(R.string.number_mines_found, minesFound, NUM_MINES));
 
             checkPlayerWon();
 
@@ -172,8 +172,8 @@ public class GameUI extends AppCompatActivity {
         else if (mines[row][col] == 4) {
             mines[row][col] = 3;
             scansUsed++;
-            TextView text = (TextView) findViewById(R.id.scansUsed);
-            text.setText("# Scans used: " + scansUsed);
+            TextView text = findViewById(R.id.scansUsed);
+            text.setText(getString(R.string.number_scans_used, scansUsed));
         }
         //// Check if button has been scanned already, if so, only scan
         else if (mines[row][col] == 5) {
@@ -232,10 +232,10 @@ public class GameUI extends AppCompatActivity {
         }
 
 
-        TextView text = (TextView) findViewById(R.id.scansUsed);
-        text.setText("# Scans used: " + scansUsed);
+        TextView text = findViewById(R.id.scansUsed);
+        text.setText(getString(R.string.number_scans_used, scansUsed));
         nearbyHiddenMines[mineRow][mineCol] = mineCount;
-        button.setText("" + nearbyHiddenMines[mineRow][mineCol]);
+        button.setText(getString(R.string.empty, nearbyHiddenMines[mineRow][mineCol]));
     }
 
     // TODO: THIS IS GAME LOGIC
@@ -264,7 +264,7 @@ public class GameUI extends AppCompatActivity {
                     }
                     nearbyHiddenMines[row][col] = mineCount;
                     button = buttons[row][col];
-                    button.setText("" + nearbyHiddenMines[row][col]);
+                    button.setText(getString(R.string.empty, nearbyHiddenMines[row][col]));
                     mineCount = 0;
                 }
                 if (mines[row][col] == 2) {
@@ -295,13 +295,13 @@ public class GameUI extends AppCompatActivity {
     private void updateNumMines() {
         // Refresh NUM_MINES
         NUM_MINES = Options.getNumMines(this);
-        TextView text = (TextView) findViewById(R.id.numberOfMinesFound);
-        text.setText("Found 0 of " + NUM_MINES + " Mines");
+        TextView text = findViewById(R.id.numberOfMinesFound);
+        text.setText(getString(R.string.found_zero_of_mine_nums, NUM_MINES));
     }
 
     // TODO: THIS IS UI
     private void populateBoard() {
-        TableLayout table = (TableLayout) findViewById(R.id.tableForGameBoard);
+        TableLayout table = findViewById(R.id.tableForGameBoard);
         final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
         for (int row = 0; row < NUM_ROWS; row++) {
             TableRow tableRow = new TableRow(this);
@@ -313,6 +313,7 @@ public class GameUI extends AppCompatActivity {
             for (int col = 0; col < NUM_COLS; col++) {
                 final int FINAL_COL = col;
                 final int FINAL_ROW = row;
+
                 Button button = new Button(this);
                 button.setTextSize(25);
                 button.setLayoutParams(new TableRow.LayoutParams(
