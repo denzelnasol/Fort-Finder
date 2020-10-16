@@ -5,24 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fight"
-    tools:context=".model.Menu">
+    tools:context=".model.ui.Menu">
 
     <TextView
         android:id="@+id/titleView"
-        android:layout_width="670dp"
-        android:layout_height="52dp"
+        android:layout_width="674dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        android:text="Fort Hunt"
+        android:text="@string/fort_hunt_title"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
+        android:textColor="#3E0D0D"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintVertical_bias="0.565" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -39,19 +39,32 @@
             android:id="@+id/startButton"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="Start" />
+            android:background="@drawable/wood_button"
+            android:text="@string/start"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/optionsButton"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="Options" />
+            android:background="@drawable/wood_button"
+            android:text="@string/options"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/helpButton"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="Help" />
+            android:background="@drawable/wood_button"
+            android:text="@string/help"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

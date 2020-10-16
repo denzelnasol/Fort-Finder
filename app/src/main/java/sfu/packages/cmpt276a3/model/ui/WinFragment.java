@@ -1,4 +1,4 @@
-package sfu.packages.cmpt276a3.model;
+package sfu.packages.cmpt276a3.model.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 import sfu.packages.cmpt276a3.R;
 
+// Pops up to user when they win the game
 public class WinFragment extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

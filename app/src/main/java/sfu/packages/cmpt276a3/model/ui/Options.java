@@ -1,4 +1,4 @@
-package sfu.packages.cmpt276a3.model;
+package sfu.packages.cmpt276a3.model.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,16 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.Path;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import sfu.packages.cmpt276a3.R;
 
+// Displays options activity and allows user to change settings for the game
 public class Options extends AppCompatActivity {
     private static final String NUM_MINES = "Number of Mines";
     private static final String BOARD_SIZE = "Board Size";
@@ -33,28 +33,27 @@ public class Options extends AppCompatActivity {
     }
 
     private void setUpEraseButton(Context context) {
-        Button button = (Button) findViewById(R.id.eraseTimesPlayedButton);
+        final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
+        Button button = findViewById(R.id.eraseTimesPlayedButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean eraseCheck = true;
+                slash.start();
+                boolean eraseCheck = true;
                 SharedPreferences prefs = Options.this.getSharedPreferences("ErasePrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("Erase Check", eraseCheck);
                 editor.apply();
-                eraseCheck = false;
             }
         });
     }
 
     private void createBoardSizeRadioButton() {
-        RadioGroup group = (RadioGroup) findViewById(R.id.radio_group_board_size);
+        RadioGroup group = findViewById(R.id.radio_group_board_size);
         String[] boardSizes = getResources().getStringArray(R.array.game_board_sizes);
 
         // Create the buttons
-        for (int i = 0; i < boardSizes.length; i++) {
-            final String stringBoardSize = boardSizes[i];
-
+        for (final String stringBoardSize : boardSizes) {
             RadioButton button = new RadioButton(this);
             button.setText(stringBoardSize);
             button.setTextColor(Color.parseColor("#FFFFFF"));
@@ -89,13 +88,11 @@ public class Options extends AppCompatActivity {
     }
 
     private void createMineRadioButtons() {
-        RadioGroup group = (RadioGroup) findViewById(R.id.radio_group_number_of_mines);
+        RadioGroup group = findViewById(R.id.radio_group_number_of_mines);
         int[] numMines = getResources().getIntArray(R.array.number_of_mines);
 
         // Create the buttons
-        for (int i = 0; i < numMines.length; i++) {
-            final int numMine = numMines[i];
-
+        for (final int numMine : numMines) {
             RadioButton button = new RadioButton(this);
             button.setText(getString(R.string.mines, numMine));
             button.setTextColor(Color.parseColor("#FFFFFF"));

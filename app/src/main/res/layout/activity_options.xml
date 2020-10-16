@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/fight"
     android:layout_height="match_parent"
-    tools:context=".model.Options">
+    tools:context=".model.ui.Options">
 
     <RadioGroup
         android:id="@+id/radio_group_number_of_mines"
@@ -30,7 +29,7 @@
         android:background="#36000000"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:text="Settings"
+        android:text="@string/settings"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -46,7 +45,7 @@
         android:background="#36000000"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:text="Number of Mines:"
+        android:text="@string/number_of_mines"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
@@ -61,7 +60,7 @@
         android:background="#36000000"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:text="Board Size:"
+        android:text="@string/board_size"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
@@ -84,14 +83,16 @@
     <Button
         android:id="@+id/eraseTimesPlayedButton"
         android:layout_width="wrap_content"
-        android:layout_height="66dp"
+        android:layout_height="101dp"
         android:layout_above="@+id/radio_group_board_size"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="312dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="-103dp"
         android:layout_toEndOf="@+id/settingsView"
-        android:text="Erase Times Played" />
+        android:background="@drawable/wood_button"
+        android:text="@string/erase_times_played"
+        android:textColor="#FFFFFF" />
 </RelativeLayout>
