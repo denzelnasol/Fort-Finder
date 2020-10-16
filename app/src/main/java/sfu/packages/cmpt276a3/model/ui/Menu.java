@@ -1,4 +1,4 @@
-package sfu.packages.cmpt276a3.model;
+package sfu.packages.cmpt276a3.model.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

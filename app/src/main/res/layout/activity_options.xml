@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/fight"
     android:layout_height="match_parent"
-    tools:context=".model.Options">
+    tools:context=".model.ui.Options">
 
     <RadioGroup
         android:id="@+id/radio_group_number_of_mines"

@@ -1,4 +1,4 @@
-package sfu.packages.cmpt276a3.model;
+package sfu.packages.cmpt276a3.model.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import sfu.packages.cmpt276a3.R;
 

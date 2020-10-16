@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fight"
-    tools:context=".model.GameUI">
+    tools:context=".model.ui.GameUI">
 
     <TextView
         android:id="@+id/numberOfMinesFound"

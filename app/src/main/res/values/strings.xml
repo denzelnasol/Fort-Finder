@@ -2,9 +2,8 @@
     <string name="app_name">Fort Hunt</string>
     <string name="leave">Return</string>
     <string name="cancel">Cancel</string>
-    <string name="linkToSite" tools:ignore="TypographyDashes">Home Page: https://opencoursehub.cs.sfu.ca/jackt/grav-cms/cmpt276-2/home</string>
-    <string name="linkToPexels">Pexels URL: https://www.pexels.com/photo/architectural-photography-of-brown-and-gray-castle-3061171/</string>
-    <string name="linkToSampleImages">Samples URL: https://canvas.sfu.ca/courses/56838/pages/sample-images</string>
+    <string name="linkToSite" tools:ignore="TypographyDashes">Home Page: https://opencoursehub.cs.sfu.ca/jackt/grav-cms/cmpt276-2/home\nPexels URL: https://www.pexels.com/photo/architectural-photography-of-brown-and-gray-castle-3061171/
+    \nSamples URL: https://canvas.sfu.ca/courses/56838/pages/sample-images\nPNG Tree: https://pngtree.com/free-png-vectors/button\nFort Icon: https://icons8.com/icons/set/medieval</string>
     <string name="mines">%1$d Mines</string>
     <string name="fourBySix">4 x 6</string>
     <string name="games_played">Games Played: %1$d</string>

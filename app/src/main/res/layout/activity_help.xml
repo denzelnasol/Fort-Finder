@@ -5,44 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fight"
-    tools:context=".model.Help">
-
-    <TextView
-        android:id="@+id/classLinkView3"
-        android:layout_width="670dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="28dp"
-        android:autoLink="all"
-        android:background="#193E88"
-        android:backgroundTint="#AB314AA3"
-        android:linksClickable="true"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:text="@string/linkToSampleImages"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/classLinkView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/helpView"
-        app:layout_constraintTop_toBottomOf="@+id/classLinkView" />
-
-    <TextView
-        android:id="@+id/classLinkView2"
-        android:layout_width="670dp"
-        android:layout_height="28dp"
-        android:autoLink="all"
-        android:background="#193E88"
-        android:backgroundTint="#AB314AA3"
-        android:linksClickable="true"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:text="@string/linkToPexels"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/classLinkView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/helpView"
-        app:layout_constraintTop_toBottomOf="@+id/classLinkView" />
+    tools:context=".model.ui.Help">
 
     <TextView
         android:id="@+id/aboutAuthorView"
@@ -95,7 +58,7 @@
     <TextView
         android:id="@+id/classLinkView"
         android:layout_width="670dp"
-        android:layout_height="23dp"
+        android:layout_height="91dp"
         android:autoLink="all"
         android:background="#193E88"
         android:backgroundTint="#AB314AA3"

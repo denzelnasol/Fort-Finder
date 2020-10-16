@@ -1,4 +1,4 @@
-package sfu.packages.cmpt276a3.model;
+package sfu.packages.cmpt276a3.model.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +22,7 @@ import androidx.fragment.app.FragmentManager;
 import java.util.Random;
 
 import sfu.packages.cmpt276a3.R;
+import sfu.packages.cmpt276a3.model.logic.OptionsData;
 
 // Displays the game board and uod
 public class GameUI extends AppCompatActivity {
