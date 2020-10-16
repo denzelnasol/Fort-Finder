@@ -22,9 +22,11 @@ import androidx.fragment.app.FragmentManager;
 import java.util.Random;
 
 import sfu.packages.cmpt276a3.R;
-import sfu.packages.cmpt276a3.model.logic.OptionsData;
+import sfu.packages.cmpt276a3.model.logic.GameLogic;
 
-// Displays the game board and uod
+/**
+ * Displays the game board and uod
+ */
 public class GameUI extends AppCompatActivity {
 
     // NOTE: The term 'Mines' refers to 'Forts'
@@ -52,12 +54,15 @@ public class GameUI extends AppCompatActivity {
     // Array containing number of surround mines for each button
     int[][] nearbyHiddenMines = new int[NUM_ROWS][NUM_COLS];
 
-    OptionsData optionsData = OptionsData.getInstance();
+    GameLogic logic = new GameLogic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
+
+        scansUsed = 0;
+        minesFound = 0;
 
         updateGamesPlayed();
         updateNumMines();
@@ -329,12 +334,13 @@ public class GameUI extends AppCompatActivity {
                     public void onClick(View v) {
                         slash.start();
                         Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-                        if (mines[FINAL_ROW][FINAL_COL] == 1) {
+                        vibrator.vibrate(250);
+                       /* if (mines[FINAL_ROW][FINAL_COL] == 1) {
                             vibrator.vibrate(250);
                         }
                         else {
                             vibrator.vibrate(100);
-                        }
+                        }*/
                         boardButtonClicked(FINAL_ROW, FINAL_COL);
                     }
                 });
@@ -349,10 +355,6 @@ public class GameUI extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
-        // Reset values
-        scansUsed = 0;
-        minesFound = 0;
     }
 
     public static Intent makeIntent(Context context) {
