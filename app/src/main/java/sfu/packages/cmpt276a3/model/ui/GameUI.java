@@ -334,13 +334,12 @@ public class GameUI extends AppCompatActivity {
                     public void onClick(View v) {
                         slash.start();
                         Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-                        vibrator.vibrate(250);
-                       /* if (mines[FINAL_ROW][FINAL_COL] == 1) {
+                        if (mines[FINAL_ROW][FINAL_COL] == 1) {
                             vibrator.vibrate(250);
                         }
                         else {
                             vibrator.vibrate(100);
-                        }*/
+                        }
                         boardButtonClicked(FINAL_ROW, FINAL_COL);
                     }
                 });
