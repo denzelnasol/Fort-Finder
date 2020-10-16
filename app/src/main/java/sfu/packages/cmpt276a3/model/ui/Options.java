@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 
 import sfu.packages.cmpt276a3.R;
 
-/** 
+/**
  * Displays options activity and allows user to change settings for the game
  */
 public class Options extends AppCompatActivity {
