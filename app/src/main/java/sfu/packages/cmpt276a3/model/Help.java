@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import sfu.packages.cmpt276a3.R;
 
+// Displays help activity describing game info and how it works
 public class Help extends AppCompatActivity {
 
     @Override

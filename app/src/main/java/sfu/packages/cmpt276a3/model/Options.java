@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Path;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import sfu.packages.cmpt276a3.R;
 
+// Displays options activity and allows user to change settings for the game
 public class Options extends AppCompatActivity {
     private static final String NUM_MINES = "Number of Mines";
     private static final String BOARD_SIZE = "Board Size";
@@ -33,10 +35,12 @@ public class Options extends AppCompatActivity {
     }
 
     private void setUpEraseButton(Context context) {
+        final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
         Button button = (Button) findViewById(R.id.eraseTimesPlayedButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                slash.start();
                 Boolean eraseCheck = true;
                 SharedPreferences prefs = Options.this.getSharedPreferences("ErasePrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();

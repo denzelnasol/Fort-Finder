@@ -8,16 +8,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -26,14 +23,14 @@ import java.util.Random;
 
 import sfu.packages.cmpt276a3.R;
 
-public class GameBoard extends AppCompatActivity {
+// Displays the game board and uod
+public class GameUI extends AppCompatActivity {
 
     // NOTE: The term 'Mines' refers to 'Forts'
 
     private static int NUM_ROWS = 4;
     private static int NUM_COLS = 6;
     private static int NUM_MINES = 6;
-
     private static int NUM_GAMES_PLAYED = 0;
 
     private static int minesFound = 0;
@@ -54,28 +51,29 @@ public class GameBoard extends AppCompatActivity {
     // Array containing number of surround mines for each button
     int nearbyHiddenMines[][] = new int[NUM_ROWS][NUM_COLS];
 
+    OptionsData optionsData = OptionsData.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
 
         updateGamesPlayed();
-
         updateNumMines();
         updateBoardSize();
-        
+
         populateBoard();
         setMines();
     }
 
-    private void updateGamesPlayed() {
+    void updateGamesPlayed() {
         SharedPreferences sharedPreferences = getSharedPreferences("ErasePrefs", MODE_PRIVATE);
         Boolean eraseCheck = sharedPreferences.getBoolean("Erase Check", false);
 
         if (eraseCheck == true) {
             NUM_GAMES_PLAYED = 0;
             sharedPreferences.edit().clear().commit();
-            saveGamesPlayed();
+            setGamesPlayed();
         }
         else {
             NUM_GAMES_PLAYED = getGamesPlayed(this);
@@ -90,13 +88,13 @@ public class GameBoard extends AppCompatActivity {
 
     }
 
-    private void saveGamesPlayed() {
+    void setGamesPlayed() {
         SharedPreferences.Editor editor = getSharedPreferences("PreferencesName", MODE_PRIVATE).edit();
         editor.putInt("Games Played", NUM_GAMES_PLAYED);
         editor.apply();
     }
 
-
+    // TODO: THIS IS GAME LOGIC
     private void updateBoardSize() {
         String boardSize = Options.getBoardSize(this);
         switch (boardSize) {
@@ -118,55 +116,7 @@ public class GameBoard extends AppCompatActivity {
         nearbyHiddenMines = new int[NUM_ROWS][NUM_COLS];
     }
 
-    private void updateNumMines() {
-        // Refresh NUM_MINES
-        NUM_MINES = Options.getNumMines(this);
-        TextView text = (TextView) findViewById(R.id.numberOfMinesFound);
-        text.setText("Found 0 of " + NUM_MINES + " Mines");
-    }
-
-    private void populateBoard() {
-        TableLayout table = (TableLayout) findViewById(R.id.tableForGameBoard);
-        final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
-        for (int row = 0; row < NUM_ROWS; row++) {
-            TableRow tableRow = new TableRow(this);
-            tableRow.setLayoutParams(new TableLayout.LayoutParams(
-                    TableLayout.LayoutParams.MATCH_PARENT,
-                    TableLayout.LayoutParams.MATCH_PARENT,
-                    1.0f));
-            table.addView(tableRow);
-            for (int col = 0; col < NUM_COLS; col++) {
-                final int FINAL_COL = col;
-                final int FINAL_ROW = row;
-                Button button = new Button(this);
-                button.setLayoutParams(new TableRow.LayoutParams(
-                        TableRow.LayoutParams.MATCH_PARENT,
-                        TableRow.LayoutParams.MATCH_PARENT,
-                        1.0f));
-
-                // Make text not clip for small buttons
-                button.setPadding(0, 0, 0, 0);
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        slash.start();
-                        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-                        if (mines[FINAL_ROW][FINAL_COL] == 1) {
-                            vibrator.vibrate(250);
-                        }
-                        else {
-                            vibrator.vibrate(100);
-                        }
-                        boardButtonClicked(FINAL_ROW, FINAL_COL);
-                    }
-                });
-
-                tableRow.addView(button);
-                buttons[row][col] = button;
-            }
-        }
-    }
-
+    // TODO: THIS IS GAME LOGIC
     private void setMines() {
         int timesRun = NUM_MINES;
         for (int i = 0; i < timesRun; i++) {
@@ -191,6 +141,7 @@ public class GameBoard extends AppCompatActivity {
         }
     }
 
+    // TODO: THIS IS GAME LOGIC
     private void boardButtonClicked(int row, int col) {
         Button button = buttons[row][col];
 
@@ -238,6 +189,7 @@ public class GameBoard extends AppCompatActivity {
         updateNearbyHiddenMines();
     }
 
+    // TODO: THIS IS GAME LOGIC
     private void checkPlayerWon() {
         if (minesFound == NUM_MINES) {
             FragmentManager manager = getSupportFragmentManager();
@@ -245,7 +197,7 @@ public class GameBoard extends AppCompatActivity {
             dialog.show(manager, "WinMessageDialog");
 
             NUM_GAMES_PLAYED++;
-            saveGamesPlayed();
+            setGamesPlayed();
 
             // Reset values
             NUM_MINES = 0;
@@ -254,6 +206,7 @@ public class GameBoard extends AppCompatActivity {
         }
     }
 
+    // TODO: THIS IS GAME LOGIC
     private void scanBoard(int mineRow, int mineCol) {
         Button button = buttons[mineRow][mineCol];
         int mineCount = 0;
@@ -261,7 +214,7 @@ public class GameBoard extends AppCompatActivity {
         for (int boardRow = 0; boardRow < NUM_ROWS; boardRow++) {
             for (int boardCol = 0; boardCol < NUM_COLS; boardCol++) {
 
-               if (mineRow == boardRow) {
+                if (mineRow == boardRow) {
                     if (mines[boardRow][boardCol] == 1) {
                         mineCount++;
                     }
@@ -277,12 +230,15 @@ public class GameBoard extends AppCompatActivity {
         if (mines[mineRow][mineCol] != 5) {
             scansUsed++;
         }
+
+
         TextView text = (TextView) findViewById(R.id.scansUsed);
         text.setText("# Scans used: " + scansUsed);
         nearbyHiddenMines[mineRow][mineCol] = mineCount;
         button.setText("" + nearbyHiddenMines[mineRow][mineCol]);
     }
 
+    // TODO: THIS IS GAME LOGIC
     private void updateNearbyHiddenMines() {
         Button button;
         int mineCount = 0;
@@ -318,6 +274,7 @@ public class GameBoard extends AppCompatActivity {
         }
     }
 
+    // TODO: THIS IS UI
     private void lockButtonSizes() {
         for  (int row = 0; row < NUM_ROWS; row++) {
             for (int col = 0; col < NUM_COLS; col++) {
@@ -334,6 +291,59 @@ public class GameBoard extends AppCompatActivity {
         }
     }
 
+    // TODO: THIS IS UI
+    private void updateNumMines() {
+        // Refresh NUM_MINES
+        NUM_MINES = Options.getNumMines(this);
+        TextView text = (TextView) findViewById(R.id.numberOfMinesFound);
+        text.setText("Found 0 of " + NUM_MINES + " Mines");
+    }
+
+    // TODO: THIS IS UI
+    private void populateBoard() {
+        TableLayout table = (TableLayout) findViewById(R.id.tableForGameBoard);
+        final MediaPlayer slash = MediaPlayer.create(this, R.raw.slash);
+        for (int row = 0; row < NUM_ROWS; row++) {
+            TableRow tableRow = new TableRow(this);
+            tableRow.setLayoutParams(new TableLayout.LayoutParams(
+                    TableLayout.LayoutParams.MATCH_PARENT,
+                    TableLayout.LayoutParams.MATCH_PARENT,
+                    1.0f));
+            table.addView(tableRow);
+            for (int col = 0; col < NUM_COLS; col++) {
+                final int FINAL_COL = col;
+                final int FINAL_ROW = row;
+                Button button = new Button(this);
+                button.setTextSize(25);
+                button.setLayoutParams(new TableRow.LayoutParams(
+                        TableRow.LayoutParams.MATCH_PARENT,
+                        TableRow.LayoutParams.MATCH_PARENT,
+                        1.0f));
+
+                // Make text not clip for small buttons
+                button.setPadding(0, 0, 0, 0);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        slash.start();
+                        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+                        if (mines[FINAL_ROW][FINAL_COL] == 1) {
+                            vibrator.vibrate(250);
+                        }
+                        else {
+                            vibrator.vibrate(100);
+                        }
+                        boardButtonClicked(FINAL_ROW, FINAL_COL);
+                    }
+                });
+
+                tableRow.addView(button);
+                buttons[row][col] = button;
+            }
+        }
+    }
+
+    // TODO: EXTRA FUNCTIONS
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -344,6 +354,6 @@ public class GameBoard extends AppCompatActivity {
     }
 
     public static Intent makeIntent(Context context) {
-        return new Intent(context, GameBoard.class);
+        return new Intent(context, GameUI.class);
     }
 }
